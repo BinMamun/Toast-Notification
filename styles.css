@@ -163,3 +163,9 @@
     width: 0;
   }
 }
+
+.toast img.close-icon {
+  height: 12px;
+  position: absolute;
+  right: 5px;
+}

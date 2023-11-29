@@ -19,7 +19,7 @@ infoBtn.addEventListener("click", () => {
 })
 
 let successfulMsg = "Successfully submitted!"
-let errorMsg = "Error occured, Please check agin!"
+let errorMsg = "Error occured, check agin!"
 let invalidMsg = "Invalid data!"
 let infoMsg = "This is an info toast!"
 
@@ -30,13 +30,13 @@ function toast(message) {
 
   if (message === "successful") {
     toast.innerHTML = `<img src="./images/${message}.png">
-  ${successfulMsg}`;
+  ${successfulMsg}<img class="close-icon" src="./images/close.png">`;
   } else if (message === "error") {
     toast.innerHTML = `<img src="./images/${message}.png">
-    ${errorMsg}`;
+    ${errorMsg}<img class="close-icon" src="./images/close.png">`;
   } else if (message === "info") {
     toast.innerHTML = `<img src="./images/${message}.png">
-    ${infoMsg}`;
+    ${infoMsg}<img class="close-icon" src="./images/close.png">`;
   }
   else {
     toast.innerHTML = `<img src="./images/${message}.png">
