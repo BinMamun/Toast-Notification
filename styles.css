@@ -16,7 +16,9 @@
   margin: 100px;
 }
 
-.buttons button {
+
+
+.btn {
   width: 100px;
   padding: 10px 15px;
   margin-right: 10px;
@@ -45,6 +47,7 @@
 }
 
 .invalid {
+  color: #494949;
   background: #fff156;
 }
 
