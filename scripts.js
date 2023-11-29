@@ -5,28 +5,25 @@ const invalidBtn = document.querySelector(".js-invalid-btn");
 
 succefullBtn.addEventListener("click", () => {
   toast("successful");
-  setTimeout(() => {
-    toastBox.innerHTML = "";
-  }, 3000);
 })
 errorBtn.addEventListener("click", () => {
   toast("error");
-  setTimeout(() => {
-    toastBox.innerHTML = "";
-  }, 3000);
 })
 invalidBtn.addEventListener("click", () => {
   toast("invalid");
-  setTimeout(() => {
-    toastBox.innerHTML = "";
-  }, 3000);
 })
 
+let timeoutId;
+
 function toast(message) {
+  clearTimeout(timeoutId);
   const toast = document.createElement("div");
   toast.classList.add(`${message}-toast`);
   toast.classList.add(`toast`);
   toast.innerHTML = `<img src="./images/${message}.png" alt="">
   ${message.toUpperCase()}`;
   toastBox.appendChild(toast);
+  timeoutId = setTimeout(() => {
+    toastBox.innerHTML = "";
+  }, 3000);
 }
