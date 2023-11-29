@@ -13,17 +13,27 @@ invalidBtn.addEventListener("click", () => {
   toast("invalid");
 })
 
-let timeoutId;
+let successfulMsg = "Successfully submitted!"
+let errorMsg = "Error occured, Please check agin!"
+let invalidMsg = "Invalid data!"
 
 function toast(message) {
-  clearTimeout(timeoutId);
   const toast = document.createElement("div");
   toast.classList.add(`${message}-toast`);
   toast.classList.add(`toast`);
-  toast.innerHTML = `<img src="./images/${message}.png" alt="">
-  ${message.toUpperCase()}`;
+  if (message === "successful") {
+    toast.innerHTML = `<img src="./images/${message}.png">
+  ${successfulMsg}`;
+  } else if (message === "error") {
+    toast.innerHTML = `<img src="./images/${message}.png">
+    ${errorMsg}`;
+  } else {
+    toast.innerHTML = `<img src="./images/${message}.png">
+    ${invalidMsg}`;
+  }
+
   toastBox.appendChild(toast);
-  timeoutId = setTimeout(() => {
-    toastBox.innerHTML = "";
+  setTimeout(() => {
+    toast.remove();
   }, 3000);
 }
