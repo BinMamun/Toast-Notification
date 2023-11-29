@@ -52,6 +52,14 @@
   background: rgb(235, 153, 0);
 }
 
+.info {
+  background-color: rgb(35, 193, 255);
+}
+
+.info:hover {
+  background-color: rgb(0, 166, 232);
+}
+
 .toast-box {
   position: absolute;
   right: 20px;
@@ -83,7 +91,7 @@
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
   position: relative;
   transform: translateX(100%);
-  animation: moveleft 0.5s linear forwards;
+  animation: moveleft 0.3s linear forwards;
 }
 
 @keyframes moveleft {
@@ -134,7 +142,7 @@
   left: 0;
   bottom: 0;
   background: orangered;
-  animation: anim 3s linear forwards;
+  animation: anim 3s linear backwards;
 }
 
 @keyframes anim {
