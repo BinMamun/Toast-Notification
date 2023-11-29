@@ -5,12 +5,50 @@
   box-sizing: border-box;
 }
 
-body {
-  padding: 1px;
-}
-
 .container {
   width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  padding: 1px;
+}
+
+.buttons {
+  margin: 100px;
+}
+
+.buttons button {
+  width: 100px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  font-size: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+.successful {
+  background: #40d17d;
+}
+
+.successful:hover {
+  background: #27ae60;
+}
+
+.error {
+  background: #e74c3c;
+}
+
+.error:hover {
+  background: #c0392c;
+}
+
+.invalid {
+  background: #fff156;
+}
+
+.invalid:hover {
+  color: #676767;
+  background: #f0df24;
 }
