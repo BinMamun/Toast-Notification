@@ -58,7 +58,6 @@ function toast(message) {
   }, 3000);
 }
 
-
 function showMessage(message) {
   const msg = {
     successful: "Successfully submitted!",
