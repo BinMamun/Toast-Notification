@@ -16,8 +16,6 @@
   margin: 100px;
 }
 
-
-
 .btn {
   width: 100px;
   padding: 10px 15px;
@@ -56,14 +54,17 @@
 
 .toast-box {
   position: absolute;
-  right: 30px;
+  right: 20px;
   top: 30px;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   overflow: hidden;
   padding: 20px;
+
 }
+
+
 
 .toast-box img {
   height: 25px;
@@ -81,6 +82,14 @@
   background: rgb(255, 255, 255);
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
   position: relative;
+  transform: translateX(100%);
+  animation: moveleft 0.5s linear forwards;
+}
+
+@keyframes moveleft {
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .successful-toast {
