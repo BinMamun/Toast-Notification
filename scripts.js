@@ -26,20 +26,33 @@ function toast(message) {
   toast.classList.add(`toast`);
 
   if (message === "successful") {
-    toast.innerHTML = `<img src="./images/${message}.png">
-  ${showMessage(message)}<img class="close-icon js-close-icon" src="./images/close.png">`;
+    toast.innerHTML = `
+    <img src="./images/${message}.png">
+    ${showMessage(message)}
+    <img class="close-icon js-close-icon" src="./images/close.png">`;
   } else if (message === "error") {
-    toast.innerHTML = `<img src="./images/${message}.png">
-    ${showMessage(message)}<img class="close-icon" src="./images/close.png">`;
+    toast.innerHTML = `
+    <img src="./images/${message}.png">
+    ${showMessage(message)}
+    <img class="close-icon js-close-icon" src="./images/close.png">`;
   } else if (message === "info") {
-    toast.innerHTML = `<img src="./images/${message}.png">
-    ${showMessage(message)}<img class="close-icon" src="./images/close.png">`;
+    toast.innerHTML = `
+    <img src="./images/${message}.png">
+    ${showMessage(message)}
+    <img class="close-icon js-close-icon" src="./images/close.png">`;
   } else {
-    toast.innerHTML = `<img src="./images/${message}.png">
-    ${showMessage(message)}<img class="close-icon" src="./images/close.png">`;
+    toast.innerHTML = `
+    <img src="./images/${message}.png">
+    ${showMessage(message)}
+    <img class="close-icon js-close-icon" src="./images/close.png">`;
   }
 
   toastBox.appendChild(toast);
+
+  toast.addEventListener("click", () => {
+    toast.remove();
+  });
+
   setTimeout(() => {
     toast.remove();
   }, 3000);
