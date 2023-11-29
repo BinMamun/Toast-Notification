@@ -4,6 +4,7 @@ const errorBtn = document.querySelector(".js-error-btn");
 const invalidBtn = document.querySelector(".js-invalid-btn");
 const infoBtn = document.querySelector(".js-info-btn");
 
+
 succefullBtn.addEventListener("click", () => {
   toast("successful");
 })
@@ -18,10 +19,6 @@ infoBtn.addEventListener("click", () => {
   toast("info");
 })
 
-let successfulMsg = "Successfully submitted!"
-let errorMsg = "Error occured, check agin!"
-let invalidMsg = "Invalid data!"
-let infoMsg = "This is an info toast!"
 
 function toast(message) {
   const toast = document.createElement("div");
@@ -30,22 +27,39 @@ function toast(message) {
 
   if (message === "successful") {
     toast.innerHTML = `<img src="./images/${message}.png">
-  ${successfulMsg}<img class="close-icon" src="./images/close.png">`;
+  ${showMessage(message)}<img class="close-icon js-close-icon" src="./images/close.png">`;
   } else if (message === "error") {
     toast.innerHTML = `<img src="./images/${message}.png">
-    ${errorMsg}<img class="close-icon" src="./images/close.png">`;
+    ${showMessage(message)}<img class="close-icon" src="./images/close.png">`;
   } else if (message === "info") {
     toast.innerHTML = `<img src="./images/${message}.png">
-    ${infoMsg}<img class="close-icon" src="./images/close.png">`;
-  }
-  else {
+    ${showMessage(message)}<img class="close-icon" src="./images/close.png">`;
+  } else {
     toast.innerHTML = `<img src="./images/${message}.png">
-    ${invalidMsg}`;
+    ${showMessage(message)}<img class="close-icon" src="./images/close.png">`;
   }
 
   toastBox.appendChild(toast);
-
   setTimeout(() => {
     toast.remove();
   }, 3000);
+}
+
+
+function showMessage(message) {
+  const msg = {
+    successful: "Successfully submitted!",
+    error: "Error occured, check agin!",
+    info: "This is an info toast!",
+    invalid: "This is an info toast!"
+  }
+  if (message === "successful") {
+    return msg.successful;
+  } else if (message === "error") {
+    return msg.error;
+  } else if (message === "info") {
+    return msg.info;
+  } else {
+    return msg.invalid;
+  }
 }
